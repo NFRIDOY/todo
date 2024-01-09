@@ -4,8 +4,8 @@ export default function TaskCard() {
 
     // TODO: Make this dynamic from database. 
     return (
-        <div className="card w-fit bg-base-100 shadow-xl">
-            <div className="card-body">
+        <div className="card w-full bg-base-100 shadow-xl">
+            <div className="card-body p-4">
                 <div className="flex justify-between">
                     <h2 className="text-lg font-bold">Client Name: </h2>
                     <h2 className="text-lg font-bold">User Name: </h2>

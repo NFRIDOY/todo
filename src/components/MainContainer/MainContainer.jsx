@@ -8,7 +8,7 @@ import TaskContainer from '../TaskContainer/TaskContainer'
 
 export default function MainContainer() {
     return (
-        <section className='grid grid-cols-6 w-fit'>
+        <section className='flex gap-3 w-fit'>
             <TaskContainer mainTitle={"Incomplete"}>
                 <Incomplete></Incomplete>
             </TaskContainer>
