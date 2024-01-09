@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import React from 'react';
 import App from "../../App";
 import Mainlayout from './../../layout/Mainlayout';
+import AddTask from "../../pages/AddTask/AddTask";
 
 const router = createBrowserRouter([
     {
@@ -12,7 +13,11 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <App></App>,
-            }
+            },
+            {
+                path: "/addTask",
+                element: <AddTask></AddTask>,
+            },
         ]
     },
 ]);
