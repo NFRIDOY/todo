@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import React from 'react';
-import App from "../../App";
-import Mainlayout from './../../layout/Mainlayout';
-import AddTask from "../../pages/AddTask/AddTask";
-import Registration from './../../pages/Registration/Registration';
-import Login from "../../pages/Login/Login";
+import Mainlayout from './../layout/Mainlayout';
+import App from './../App';
+import AddTask from './../pages/AddTask/AddTask';
+import Registration from './../pages/Registration/Registration';
+import Login from './../pages/Login/Login';
+import PrivateRoute from "./PrivateRoute";
+
 
 const router = createBrowserRouter([
     {
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addTask",
-                element: <AddTask></AddTask>,
+                element: <PrivateRoute><AddTask></AddTask></PrivateRoute>,
             },
             {
                 path: "/Registration",
