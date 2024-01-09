@@ -4,6 +4,7 @@ export default function Incomplete() {
     return (
         <div>
             <TaskCard></TaskCard>
+            <TaskCard></TaskCard>
         </div>
     )
 }

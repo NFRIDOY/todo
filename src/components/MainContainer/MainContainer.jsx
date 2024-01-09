@@ -12,7 +12,7 @@ export default function MainContainer() {
             <TaskContainer mainTitle={"Incomplete"}>
                 <Incomplete></Incomplete>
             </TaskContainer>
-            <TaskContainer mainTitle={"ToDo"}>
+            <TaskContainer mainTitle={"To Do"}>
                 <ToDo></ToDo>
             </TaskContainer>
             <TaskContainer mainTitle={"Doing"}>
