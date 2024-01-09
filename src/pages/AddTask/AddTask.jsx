@@ -21,6 +21,12 @@ export default function AddTask() {
                     </label>
                     <input type="text" placeholder="Task" className="input input-bordered" required />
                 </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Date</span>
+                    </label>
+                    <input type="date" placeholder="" className="input input-bordered" required />
+                </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Submit</button>
                 </div>

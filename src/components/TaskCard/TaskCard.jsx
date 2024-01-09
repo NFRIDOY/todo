@@ -12,28 +12,29 @@ export default function TaskCard() {
                     <h2 className="text-lg font-bold">User Name: </h2>
                 </div>
                 <p>Details</p>
-                <div className="card-actions flex justify-between px-2">
-
-                    <button className="border-2 ">
-                        <span className="flex ">
-                            <span className="pt-2">
-                                <FaLink />
+                <div className="card-actions flex justify-end">
+                    <div className="card-actions flex justify-between gap-10 px-2">
+                        <button className="border-2 ">
+                            <span className="flex ">
+                                <span className="pt-2">
+                                    <FaLink />
+                                </span>
+                                <span>
+                                    10
+                                </span>
                             </span>
-                            <span>
-                                10
+                        </button>
+                        <button className="">
+                            <span className="flex ">
+                                <span className="pt-2">
+                                    <FaCalendarAlt />
+                                </span>
+                                <span className="pt-1">
+                                    Date
+                                </span>
                             </span>
-                        </span>
-                    </button>
-                    <button className="">
-                        <span className="flex ">
-                            <span className="pt-2">
-                                <FaCalendarAlt />
-                            </span>
-                            <span className="pt-1">
-                                Date
-                            </span>
-                        </span>
-                    </button>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
