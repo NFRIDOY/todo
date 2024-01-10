@@ -6,6 +6,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import router from './routers/router.jsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,7 +16,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       position="bottom-left"
       reverseOrder={false}
     />
-    <RouterProvider router={router} />
-    {/* <App /> */}
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
 )

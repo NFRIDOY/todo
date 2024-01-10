@@ -1,6 +1,8 @@
 
 import toast from 'react-hot-toast';
-import useAxios from './../../hooks/useAxios';
+import useAxios from '../../hooks/useAxios';
+// import { axios } from 'axios';
+
 
 export default function AddTask() {
 
@@ -22,9 +24,24 @@ export default function AddTask() {
             date,
             status: "todo"
         }
+        toast.success('Successfully Buttons Clicked');
         // Output
         console.log(newTask)
         
+        // axios.post("http://localhost:5000/api/v1/task", newTask)
+        axios.post("/task", newTask)
+            .then(res => {
+                console.log(res)
+                console.log(res.data)
+                if (res.data.acknowledged) {
+                    toast.success('Successfully Added!')
+                } else {
+                    toast.error('Failed To Add!')
+                }
+            })
+            .catch ((error) => {
+                console.log(error);
+            })
     }
 
     return (
@@ -60,7 +77,7 @@ export default function AddTask() {
                     <input type="date" name='date' placeholder="" className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Submit</button>
+                    <button className="btn btn-primary" type='submit'>Submit</button>
                 </div>
             </form>
         </div>
