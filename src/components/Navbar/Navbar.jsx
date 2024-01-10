@@ -21,21 +21,21 @@ export default function Navbar() {
                                 Add Task
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to={"/Registration"}>
                                 Registration
                             </Link>
-                        </li>
-                        <li>
-                            <Link to={"/Login"}>
+                        </li> */}
+                        {/* <li>
+                            <Link to={"/login"}>
                                 Login
                             </Link>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                             <Link to={"/login"}>
                                 Log Out
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
 

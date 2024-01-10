@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addTask",
-                element: <PrivateRoute><AddTask></AddTask></PrivateRoute>,
+                element: <AddTask></AddTask>,
             },
             {
                 path: "/Registration",

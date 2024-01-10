@@ -2,8 +2,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
-import useAxios from "../../hooks/useAxios";
 import { FaGithub } from "react-icons/fa6";
+import useAxios from './../../hooks/useAxios';
 
 
 export default function Login() {

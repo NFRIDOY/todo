@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut, updateProfile } from "firebase/auth";
-import app from "../firebase/firebase.config";
 import toast from "react-hot-toast";
-import useAxios from "../hooks/useAxios";
+import useAxios from './../hooks/useAxios';
+import app from './../firebase/firebase.config';
 
 export const AuthContext = createContext(null)
 
@@ -56,7 +56,7 @@ export default function AuthProvider({ children }) {
             if (currentUser) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/auth.user
-                const loggedInUser = {email: currentUser.email};
+                const loggedInUser = { email: currentUser.email };
 
                 console.log(loggedInUser)
 

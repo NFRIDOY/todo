@@ -1,6 +1,11 @@
 
 
 export default function AddTask() {
+
+    const handleAddTask = () => {
+
+    }
+
     return (
         <div className="flex lg:flex-row flex-col items-center pt-20">
             <div className="w-full lg:w-1/2 flex items-center justify-center">
@@ -8,7 +13,13 @@ export default function AddTask() {
                     Add Task Here
                 </h1>
             </div>
-            <form className="card-body w-full lg:w-1/2 ">
+            <form className="card-body w-full lg:w-1/2 " onSubmit={handleAddTask}>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Your Name</span>
+                    </label>
+                    <input type="text" placeholder="Your Name" className="input input-bordered" required />
+                </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Client Name</span>
