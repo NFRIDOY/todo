@@ -2,9 +2,10 @@ import { FaLink } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 import { useState } from "react";
 
-export default function TaskCard({taskOne}) {
 
-    const [attachments, setAttachments ] = useState(0);
+export default function TaskCard({ taskOne }) {
+
+    const [attachments, setAttachments] = useState(0);
     // const { userName, clientName, taskDetails, date, status} = taskOne;
     // TODO: Make this dynamic from database. 
     console.log(taskOne)
@@ -42,5 +43,6 @@ export default function TaskCard({taskOne}) {
                 </div>
             </div>
         </div>
+
     )
 }
