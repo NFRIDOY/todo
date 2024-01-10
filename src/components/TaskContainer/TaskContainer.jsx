@@ -6,9 +6,8 @@ export default function TaskContainer({ children, mainTitle }) {
             <h1 className="pl-5 py-6 mb-3 font-bold  ">
                 {mainTitle}
             </h1>
-            <section className="">
+            <section className="max-h-[70vh] overflow-auto">
                 {children}
-
             </section>
         </div>
     )
