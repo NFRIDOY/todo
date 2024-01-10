@@ -8,7 +8,7 @@ import Attachment from "../Attachment/Attachment";
 
 
 
-export default function ToDo() {
+export default function ToDo({handleLeft, handleRight}) {
     // const taskdata = useLoadTask("/todo");
     const axios = useAxios();
 
@@ -53,7 +53,7 @@ export default function ToDo() {
             {
                 toDoTasks?.map((taskOne) => {
                     console.log("single task", taskOne);
-                    return <TaskCard key={taskOne._id} taskOne={taskOne} setModalContaint={setModalContaint} />;
+                    return <TaskCard key={taskOne._id} taskOne={taskOne} setModalContaint={setModalContaint} handleLeft={handleLeft} handleRight={handleRight} />;
                     //   return <TaskCard key={taskOne._id} taskOne={taskOne} />;
                 })
             }

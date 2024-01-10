@@ -3,7 +3,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { useState } from "react";
 
 
-export default function TaskCard({ taskOne, setModalContaint }) {
+export default function TaskCard({ taskOne, setModalContaint, handleLeft, handleRight }) {
 
     const [attachments, setAttachments] = useState(0);
     // const { userName, clientName, taskDetails, date, status} = taskOne;
@@ -20,6 +20,10 @@ export default function TaskCard({ taskOne, setModalContaint }) {
                 <p>{taskOne?.taskDetails}</p>
                 <div className="card-actions flex justify-end">
                     <div className="card-actions flex justify-between gap-10 px-0">
+                        {/* <button className="btn btn-xs" onClick={()=> handleLeft(taskOne?._id)}>{"<"}</button> */}
+                        <button className="btn btn-xs" onClick={()=> handleLeft()}>{"<"}</button>
+                        {/* <button className="btn btn-xs" onClick={()=> handleRight(taskOne?._id)}>{">"}</button> */}
+                        <button className="btn btn-xs" onClick={()=> handleRight()}>{">"}</button>
                         <button className=" " onClick={()=>document.getElementById('my_modal_5').showModal()}>
                             <span className="flex ">
                                 <span className="pt-2" >
