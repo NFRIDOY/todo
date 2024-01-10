@@ -9,7 +9,7 @@ export default function TaskCard({taskOne}) {
     // TODO: Make this dynamic from database. 
     console.log(taskOne)
     return (
-        <div className="card w-full bg-base-100 shadow-xl my-3">
+        <div className="card w-full bg-base-100 shadow-xl my-3 rounded-none">
             <div className="card-body p-4">
                 <div className="flex justify-between">
                     <h2 className="text-lg font-bold">Client Name: {taskOne?.clientName}</h2>
