@@ -7,10 +7,9 @@ export default function Attachment() {
                 <h3 className="font-bold text-lg">Attachment Your Files Here</h3>
                 <p className="py-4">You can choose multiple attachments</p>
                 <div className="modal-action">
-                    <input type="file" />
                     <form method="dialog">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn">Close</button>
+                        <input type="file" />
+                        <button className="btn">Done</button>
                     </form>
                 </div>
             </div>
