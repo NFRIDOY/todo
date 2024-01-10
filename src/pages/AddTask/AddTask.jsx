@@ -1,9 +1,30 @@
 
+import toast from 'react-hot-toast';
+import useAxios from './../../hooks/useAxios';
 
 export default function AddTask() {
 
-    const handleAddTask = () => {
+    const axios = useAxios();
 
+    const handleAddTask = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const userName = form.userName.value;
+        const clientName = form.clientName.value;
+        const taskDetails = form.taskDetails.value;
+        const date = form.date.value;
+
+
+        const newTask = {
+            userName,
+            clientName,
+            taskDetails,
+            date,
+            status: "todo"
+        }
+        // Output
+        console.log(newTask)
+        
     }
 
     return (
@@ -18,25 +39,25 @@ export default function AddTask() {
                     <label className="label">
                         <span className="label-text">Your Name</span>
                     </label>
-                    <input type="text" placeholder="Your Name" className="input input-bordered" required />
+                    <input type="text" name='userName' id='userName' placeholder="Your Name" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Client Name</span>
                     </label>
-                    <input type="text" placeholder="Client Name" className="input input-bordered" required />
+                    <input type="text" name='clientName' placeholder="Client Name" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Task</span>
                     </label>
-                    <input type="text" placeholder="Task" className="input input-bordered" required />
+                    <input type="text" name='taskDetails' placeholder="Task" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Date</span>
                     </label>
-                    <input type="date" placeholder="" className="input input-bordered" required />
+                    <input type="date" name='date' placeholder="" className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Submit</button>
