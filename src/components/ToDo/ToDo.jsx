@@ -17,15 +17,15 @@ export default function ToDo() {
         queryKey: ['todos'],
         queryFn: () => axios.get("/todo").then(
             (res) => {
-                console.log(res.data);
-                setToDoTasks(res.data);
+                // console.log(res.data);
+                return setToDoTasks(res.data);
                 // return res.data;
             })
 
 
     })
+    console.log(toDoTasks);
     // toDoTasks?.map((task) => "a");
-    console.log((toDoTasks));
     // for (task of toDoTasks) {
     // }
     // for (const task of toDoTasks) {
@@ -39,8 +39,11 @@ export default function ToDo() {
     return (
         <div>
             {
-                // toDoTasks?.map((task) => console.log(task))
-                toDoTasks?.map((taskOne) => <TaskCard key={taskOne._id} taskOne={taskOne} ></TaskCard>)
+                toDoTasks?.map((taskOne) => {
+                    console.log("single task", taskOne);
+                    return <TaskCard key={taskOne._id} taskOne={taskOne} />;
+                    //   return <TaskCard key={taskOne._id} taskOne={taskOne} />;
+                })
             }
         </div>
     )
