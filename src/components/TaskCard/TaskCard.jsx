@@ -3,12 +3,13 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { useState } from "react";
 
 
-export default function TaskCard({ taskOne }) {
+export default function TaskCard({ taskOne, setModalContaint }) {
 
     const [attachments, setAttachments] = useState(0);
     // const { userName, clientName, taskDetails, date, status} = taskOne;
     // TODO: Make this dynamic from database. 
-    console.log(taskOne)
+    // console.log(taskOne)
+    
     return (
         <div className="card w-full bg-base-100 my-3 rounded-none shadow-none">
             <div className="card-body p-4">
@@ -19,9 +20,9 @@ export default function TaskCard({ taskOne }) {
                 <p>{taskOne?.taskDetails}</p>
                 <div className="card-actions flex justify-end">
                     <div className="card-actions flex justify-between gap-10 px-0">
-                        <button className="border-2 ">
+                        <button className=" " onClick={()=>document.getElementById('my_modal_5').showModal()}>
                             <span className="flex ">
-                                <span className="pt-2">
+                                <span className="pt-2" >
                                     <FaLink />
                                 </span>
                                 <span className="pl-1">

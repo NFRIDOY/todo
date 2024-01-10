@@ -4,6 +4,7 @@ import useAxios from "../../hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import LoadingAnimations from "../LoadingAnimations/LoadingAnimations";
 import TaskCard from "../TaskCard/TaskCard";
+import Attachment from "../Attachment/Attachment";
 
 
 
@@ -12,6 +13,9 @@ export default function ToDo() {
     const axios = useAxios();
 
     const [toDoTasks, setToDoTasks] = useState([]);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [modalContaint, setModalContaint] = useState();
+
 
     const { isPending, error, data: alltodos } = useQuery({
         queryKey: ['todos'],
@@ -36,15 +40,28 @@ export default function ToDo() {
     if (isPending) return <LoadingAnimations></LoadingAnimations>
 
     // console.log(toDoTasks.length);
+
+    const openModal = () => {
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
     return (
         <div>
             {
                 toDoTasks?.map((taskOne) => {
                     console.log("single task", taskOne);
-                    return <TaskCard key={taskOne._id} taskOne={taskOne} />;
+                    return <TaskCard key={taskOne._id} taskOne={taskOne} setModalContaint={setModalContaint} />;
                     //   return <TaskCard key={taskOne._id} taskOne={taskOne} />;
                 })
             }
+            <Attachment isOpen={isModalOpen} onClose={closeModal}>
+                {/* Content for the modal goes here */}
+                <h2>Modal Content</h2>
+                <p>This is some content inside the modal.</p>
+            </Attachment>
         </div>
     )
 }
