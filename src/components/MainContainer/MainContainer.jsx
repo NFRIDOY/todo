@@ -10,7 +10,20 @@ import useAxios from '../../hooks/useAxios'
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 
-export default function MainContainer({toDoTasks, setToDoTasks, incomplete, setIncomplete}) {
+export default function MainContainer({
+    toDoTasks,
+    setToDoTasks,
+    incomplete,
+    setIncomplete,
+    doings,
+    setDoings,
+    UnderReviews,
+    setUnderReviews,
+    completeds,
+    setCompleteds,
+    overDated,
+    setOverDated,
+}) {
 
 
     // const { isPending, error, data: alltodos } = useQuery({
@@ -46,26 +59,56 @@ export default function MainContainer({toDoTasks, setToDoTasks, incomplete, setI
                 }
             })
     }
-    
+
     return (
         <section className='flex gap-3 w-fit'>
             <TaskContainer mainTitle={"Incomplete"}>
-                <Incomplete handleLeft={handleLeft} handleRight={handleRight} incomplete={incomplete} setIncomplete={setIncomplete}></Incomplete>
+                <Incomplete
+                    handleLeft={handleLeft}
+                    handleRight={handleRight}
+                    incomplete={incomplete}
+                    setIncomplete={setIncomplete}
+                ></Incomplete>
             </TaskContainer>
             <TaskContainer mainTitle={"To Do"}>
-                <ToDo handleLeft={handleLeft} handleRight={handleRight} toDoTasks={toDoTasks} setToDoTasks={setToDoTasks}></ToDo>
+                <ToDo
+                    handleLeft={handleLeft}
+                    handleRight={handleRight}
+                    toDoTasks={toDoTasks}
+                    setToDoTasks={setToDoTasks}
+                ></ToDo>
             </TaskContainer>
             <TaskContainer mainTitle={"Doing"}>
-                <Doing></Doing>
+                <Doing
+                    handleLeft={handleLeft}
+                    handleRight={handleRight}
+                    doings={doings}
+                    setDoings={setDoings}
+                ></Doing>
             </TaskContainer>
             <TaskContainer mainTitle={"Under Review"}>
-                <UnderReview></UnderReview>
+                <UnderReview
+                    handleLeft={handleLeft}
+                    handleRight={handleRight}
+                    UnderReviews={UnderReviews}
+                    setUnderReviews={setUnderReviews}
+                ></UnderReview>
             </TaskContainer>
             <TaskContainer mainTitle={"Completed"}>
-                <Completed></Completed>
+                <Completed
+                    handleLeft={handleLeft}
+                    handleRight={handleRight}
+                    completeds={completeds}
+                    setCompleteds={setCompleteds}
+                ></Completed>
             </TaskContainer>
             <TaskContainer mainTitle={"OverDated"}>
-                <OverDated></OverDated>
+                <OverDated
+                    handleLeft={handleLeft}
+                    handleRight={handleRight}
+                    overDated={overDated}
+                    setOverDated={setOverDated}
+                ></OverDated>
             </TaskContainer>
         </section>
     )

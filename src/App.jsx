@@ -11,11 +11,25 @@ function App() {
   const [toDoTasks, setToDoTasks] = useState([]);
   const [doings, setDoings] = useState([]);
   const [UnderReviews, setUnderReviews] = useState([]);
+  const [completeds, setCompleteds] = useState([]);
   const [overDated, setOverDated] = useState([]);
 
   return (
     <>
-      <MainContainer  incomplete={incomplete} setIncomplete={setIncomplete} toDoTasks={toDoTasks} setToDoTasks={setToDoTasks}></MainContainer>
+      <MainContainer
+        incomplete={incomplete}
+        setIncomplete={setIncomplete}
+        toDoTasks={toDoTasks}
+        setToDoTasks={setToDoTasks}
+        doings={doings}
+        setDoings={setDoings}
+        UnderReviews={UnderReviews}
+        setUnderReviews={setUnderReviews}
+        completeds={completeds} 
+        setCompleteds={setCompleteds}
+        overDated={overDated}
+        setOverDated={setOverDated}
+      ></MainContainer >
     </>
   )
 }
