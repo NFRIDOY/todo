@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import LoadingAnimations from "../LoadingAnimations/LoadingAnimations";
 import Attachment from "../Attachment/Attachment";
 
-export default function Doing({handleLeft, handleRight, doings,setDoings}) {
+export default function Doing({ handleLeft, handleRight, doings, setDoings }) {
 
     // const taskdata = useLoadTask("/todo");
     const axios = useAxios();
@@ -18,7 +18,7 @@ export default function Doing({handleLeft, handleRight, doings,setDoings}) {
 
     const { isPending, error, data: alltodos } = useQuery({
         queryKey: ['doings', doings],
-        queryFn: () => axios.get(`/tasks?status=Incomplete`).then(
+        queryFn: () => axios.get(`/tasks?status=Doing`).then(
             (res) => {
                 // console.log(res.data);
                 return setDoings(res.data);
