@@ -8,18 +8,18 @@ import Attachment from "../Attachment/Attachment";
 
 
 
-export default function ToDo({handleLeft, handleRight}) {
+export default function ToDo({handleLeft, handleRight, toDoTasks, setToDoTasks}) {
     // const taskdata = useLoadTask("/todo");
     const axios = useAxios();
 
-    const [toDoTasks, setToDoTasks] = useState([]);
+    
     const [isModalOpen, setModalOpen] = useState(false);
     const [modalContaint, setModalContaint] = useState();
 
 
     const { isPending, error, data: alltodos } = useQuery({
         queryKey: ['todos'],
-        queryFn: () => axios.get("/todo").then(
+        queryFn: () => axios.get(`/tasks?status=todo`).then(
             (res) => {
                 // console.log(res.data);
                 return setToDoTasks(res.data);
@@ -28,7 +28,7 @@ export default function ToDo({handleLeft, handleRight}) {
 
 
     })
-    console.log(toDoTasks);
+    // console.log(toDoTasks);
     // toDoTasks?.map((task) => "a");
     // for (task of toDoTasks) {
     // }
@@ -52,7 +52,7 @@ export default function ToDo({handleLeft, handleRight}) {
         <div>
             {
                 toDoTasks?.map((taskOne) => {
-                    console.log("single task", taskOne);
+                    // console.log("single task", taskOne);
                     return <TaskCard key={taskOne._id} taskOne={taskOne} setModalContaint={setModalContaint} handleLeft={handleLeft} handleRight={handleRight} />;
                     //   return <TaskCard key={taskOne._id} taskOne={taskOne} />;
                 })
