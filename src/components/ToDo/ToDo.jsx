@@ -9,7 +9,7 @@ import Attachment from "../Attachment/Attachment";
 
 
 export default function ToDo({handleLeft, handleRight, toDoTasks, setToDoTasks}) {
-    // const taskdata = useLoadTask("/todo");
+
     const axios = useAxios();
 
     
@@ -18,7 +18,7 @@ export default function ToDo({handleLeft, handleRight, toDoTasks, setToDoTasks})
 
 
     const { isPending, error, data: alltodos } = useQuery({
-        queryKey: ['todos'],
+        queryKey: ['todos', toDoTasks],
         queryFn: () => axios.get(`/tasks?status=todo`).then(
             (res) => {
                 // console.log(res.data);

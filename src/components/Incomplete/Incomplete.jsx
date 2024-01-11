@@ -16,7 +16,7 @@ export default function Incomplete({handleLeft, handleRight, incomplete, setInco
 
 
     const { isPending, error, data: alltodos } = useQuery({
-        queryKey: ['incomplete'],
+        queryKey: ['incomplete', incomplete],
         queryFn: () => axios.get(`/tasks?status=Incomplete`).then(
             (res) => {
                 // console.log(res.data);

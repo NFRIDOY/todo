@@ -20,9 +20,9 @@ export default function TaskCard({ taskOne, setModalContaint, handleLeft, handle
                 <p>{taskOne?.taskDetails}</p>
                 <div className="card-actions flex justify-end">
                     <div className="card-actions flex justify-between gap-10 px-0">
-                        <button className="btn btn-xs" onClick={()=> handleLeft(taskOne)}>{"<"}</button>
+                        <button className="btn btn-xs btn-error text-white font-black" onClick={()=> handleLeft(taskOne)}>{"<"}</button>
                         {/* <button className="btn btn-xs" onClick={()=> handleLeft()}>{"<"}</button> */}
-                        <button className="btn btn-xs" onClick={()=> handleRight(taskOne)}>{">"}</button>
+                        <button className="btn btn-xs btn-info text-white font-black" onClick={()=> handleRight(taskOne)}>{">"}</button>
                         {/* <button className="btn btn-xs" onClick={()=> handleRight()}>{">"}</button> */}
                         <button className=" " onClick={()=>document.getElementById('my_modal_5').showModal()}>
                             <span className="flex ">

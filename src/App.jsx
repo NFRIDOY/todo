@@ -7,10 +7,15 @@ import MainContainer from './components/MainContainer/MainContainer'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [incomplete, setIncomplete] = useState([]);
+  const [toDoTasks, setToDoTasks] = useState([]);
+  const [doings, setDoings] = useState([]);
+  const [UnderReviews, setUnderReviews] = useState([]);
+  const [overDated, setOverDated] = useState([]);
 
   return (
     <>
-      <MainContainer></MainContainer>
+      <MainContainer  incomplete={incomplete} setIncomplete={setIncomplete} toDoTasks={toDoTasks} setToDoTasks={setToDoTasks}></MainContainer>
     </>
   )
 }

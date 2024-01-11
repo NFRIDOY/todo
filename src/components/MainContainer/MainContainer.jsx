@@ -10,21 +10,20 @@ import useAxios from '../../hooks/useAxios'
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 
-export default function MainContainer() {
-    const [toDoTasks, setToDoTasks] = useState([]);
-    const [incomplete, setIncomplete] = useState([]);
-
-    const { isPending, error, data: alltodos } = useQuery({
-        queryKey: ['todos'],
-        queryFn: () => axios.get(`/tasks?status=todo`).then(
-            (res) => {
-                // console.log(res.data);
-                return setToDoTasks(res.data);
-                // return res.data;
-            })
+export default function MainContainer({toDoTasks, setToDoTasks, incomplete, setIncomplete}) {
 
 
-    })
+    // const { isPending, error, data: alltodos } = useQuery({
+    //     queryKey: ['todos'],
+    //     queryFn: () => axios.get(`/tasks?status=todo`).then(
+    //         (res) => {
+    //             // console.log(res.data);
+    //             return setToDoTasks(res.data);
+    //             // return res.data;
+    //         })
+
+
+    // })
 
     const axios = useAxios();
     const handleLeft = (task) => {
